@@ -56,7 +56,10 @@ class Snake {
 
     moveHead() {
         // create new head of snake
-        let newHead = new Node(this.snakeBody.head.x + this.xVel, this.snakeBody.head.y + this.yVel);
+        let newHead = new Node(
+                (this.snakeBody.head.x + this.xVel) % width,
+                (this.snakeBody.head.y + this.yVel) % height
+            );
         
         // color new head of snake
         fill('white');
