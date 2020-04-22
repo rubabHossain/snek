@@ -2,7 +2,7 @@
 
 let snek = null;
 let frameCounter = 0; // frameCounter & refreshThreshold used together to slow down animation.
-let refreshThreshold = 0; // higher number => slower refreshRate
+let refreshThreshold = 2; // higher number => slower refreshRate
 
 function setup() {
     let canvas = createCanvas(1280, 720);

@@ -86,18 +86,30 @@ class Snake {
     updateDirection() {
         switch(keyCode) {
             case DOWN_ARROW:
+                if(this.xVel == 0 && this.yVel == -1 * this.speed) {
+                    break;
+                }
                 this.xVel = 0;
                 this.yVel = this.speed;
                 break;
             case UP_ARROW:
+                if(this.xVel == 0 && this.yVel == this.speed) {
+                    break;
+                }
                 this.xVel = 0;
                 this.yVel = -1 * this.speed;
                 break;
             case LEFT_ARROW:
+                if(this.xVel == this.speed && this.yVel == 0) {
+                    break;
+                }
                 this.xVel = -1 * this.speed;
                 this.yVel = 0;
                 break;
             case RIGHT_ARROW:
+                if(this.xVel == -1 * this.speed && this.yVel == 0) {
+                    break;
+                }
                 this.xVel = this.speed;
                 this.yVel = 0;
                 break;
