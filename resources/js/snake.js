@@ -46,7 +46,7 @@ class Snake {
 
     constructor(initX, initY) {
         this.snakeSegmentLength = 10;
-        this.speed = this.snakeSegmentLength;
+        this.speed = this.snakeSegmentLength
         this.snakeBody = new DoublyLinkedList();
         this.xVel = this.speed;
         this.yVel = 0;
@@ -72,8 +72,7 @@ class Snake {
     }
 
 
-    moveTail() {
-        
+    moveTail() { 
         // color tail black
         fill('black');
         square(this.snakeBody.tail.x, this.snakeBody.tail.y, this.snakeSegmentLength);
@@ -117,5 +116,25 @@ class Snake {
         }
     }
 
+
+    isCollided(pellet) {
+        let x = pellet.x;
+        let y = pellet.y;
+        if (this.snakeBody.head.x == x && this.snakeBody.head.y == y) {
+            console.log("collided");
+            return true;
+        }
+        return false;
+    }
+
+    isCannibalized() {
+        // TODO:
+        return false;
+    }
+
+    grow() {
+        let newHead = new Node(this.snakeBody.head.x, this.snakeBody.head.y);
+        this.snakeBody.addFirst(newHead);
+    }
 
 }
