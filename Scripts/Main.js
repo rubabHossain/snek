@@ -8,7 +8,10 @@ let refreshThreshold = 2;   // higher number => slower refreshRate
 
 
 function setup() {
-    let canvas = createCanvas(1280, 720);
+    let padding = 50;
+    let w = window.innerWidth - padding;
+    let h = window.innerHeight - padding;
+    let canvas = createCanvas(w, h);
     canvas.parent('game');
     background(0);
 
